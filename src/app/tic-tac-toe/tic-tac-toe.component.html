@@ -1,0 +1,10 @@
+<div class="tic-tac-toe">
+    <h1>Tic Tac Toe</h1>
+    <h2>Current player: {{currentPlayer}}</h2>
+    <button id="reset" (click)="reset_game()">Reset</button>
+    <div class="board">
+        <div *ngFor="let button of buttons; let i = index;">
+            <button (click)="makeMove(i)">{{button}}</button>
+        </div>
+    </div>
+</div>

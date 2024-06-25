@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+
+#navbar{
+    display: flex; /* Makes the navbar a flex container */
+    margin: auto;
+    margin-bottom: 30px; /* Centers the navbar within its parent */
+    width: 100%; /* Example: sets the navbar width to 100% of its parent's width */
+    justify-content: center; /* Aligns the navbar items to the left and right */
+    background-color: #333; /* Sets the background color of the navbar */
+    color: white; /* Sets the text color of the navbar */
+    position: absolute; /* Makes the navbar position absolute */
+    padding: 0 20px; /* Adds padding to the navbar */
+    height: fit-content; /* Sets the height of the navbar to fit its content */
+}
+
+li {
+    display: inline;
+    margin: 10px;
+    transition: ease-in-out 0.2s color;
+}
+
+li:hover {
+    color: #0af59f;
+}

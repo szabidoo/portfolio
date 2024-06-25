@@ -1,0 +1,44 @@
+* {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 20px;
+    font-size: 30px;
+    height: fit-content;
+    width: fit-content;
+    justify-content: center;
+}
+
+li {
+    display: flex;
+    flex-direction: row; /* Change flex-direction to row */
+    align-items: center; /* Align items vertically */
+    margin: 10px; /* Add margin to create space between list elements */
+    padding: 0; /* Add padding to create space between list elements */
+    height: 50px;
+}
+
+li input[type="checkbox"] {
+    margin-right: 10px; /* Add margin to create space between checkbox and list element */
+    display: none;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin: 0px;
+}
+
+#todolist{
+    position: relative;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+}
+
+#removeButton{
+    color: red;
+    border: none;
+    background: none;
+}

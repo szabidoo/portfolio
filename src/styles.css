@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@100..400&display=swap');
+
+body {
+    display: flex;
+    width: 100%; /* Ensure body covers the full viewport width */
+    margin: 0; /* Remove default margin */
+    font-family: Playwrite PL, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a:visited {
+    color: inherit;
+}
