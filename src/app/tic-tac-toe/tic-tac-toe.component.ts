@@ -36,6 +36,9 @@ export class TicTacToeComponent {
       const [a, b, c] = combo;
       if (this.buttons[a] && this.buttons[a] === this.buttons[b] && this.buttons[a] === this.buttons[c]){
         this.winner = this.buttons[a];
+        setTimeout(() => alert(`Player ${this.winner} wins!`), 100); // Delay the alert
+        return;
+    
       }
     }
 
@@ -44,10 +47,7 @@ export class TicTacToeComponent {
       alert('Draw!');
     }
 
-    if (this.winner){
-      alert(`Player ${this.winner} wins!`);
-    }
-
+    
   }
 
   reset_game(){

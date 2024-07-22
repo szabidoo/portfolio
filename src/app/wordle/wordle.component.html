@@ -1,0 +1,11 @@
+<p>wordle works!</p>
+
+<div *ngFor="let playground of playgrounds; let pIndex = index" id="playground{{pIndex}}">
+    
+    <ul>
+      <li *ngFor="let attempt of playground.attempts; let aIndex = index">
+        <input type="text" [ngStyle]="{'background-color': getLetterColor(aIndex, pIndex)}" [(ngModel)]="attempt.value" maxlength="1" (keyup)="keyup($event, pIndex, aIndex)" id="attempt{{pIndex}}{{aIndex}}" [disabled]="isInputDisabled(pIndex, aIndex)">
+      </li>
+    </ul>
+</div>
+

@@ -1,0 +1,65 @@
+*{
+    
+    font-size: 30px;
+}
+
+p{
+  margin-top: 45px;
+  margin-left: 50px;
+}
+
+div{
+  margin-top: 10px;
+  display: flex;
+  margin-left: 200px;
+}
+
+li{
+    list-style-type: none;
+    
+}
+
+#wordle{
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 30px;
+    
+}
+
+#playgroundContainer {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr); /* Creates 5 rows */
+    gap: 10px; /* Space between rows */
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .playground {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Creates 5 columns for attempts */
+    gap: 0px; /* Space between attempts */
+    
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  li {
+    display: flex;
+  }
+  
+  input[type="text"] {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;/* Makes input take full width of its parent li */
+    text-align: center;
+    margin: 0px;
+
+  }
+
+  

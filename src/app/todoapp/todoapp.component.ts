@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
 
 
+
 @Component({
   selector: 'app-todoapp',
   standalone: true,
@@ -22,7 +23,7 @@ export class TodoappComponent {
     console.log(this.tasks);
   }
 
-  removeTask(i: number, task: string) {
-    this.tasks = this.tasks.filter(t => t !== task);
+  removeTask(index: number) {
+    this.tasks.splice(index, 1);
   }
 }
