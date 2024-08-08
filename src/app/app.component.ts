@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { Router, RouterModule, RouterOutlet } from '@angular/router';
-import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
-import { HomeComponent } from './home/home/home.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { HomeComponent } from './home/home/home.component';
+import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { TodoappComponent } from './todoapp/todoapp.component';
-import { NgModule } from '@angular/core';
 
 
 @Component({
@@ -15,8 +14,5 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'portfolio';
-
-  constructor(private router: Router) { }
-  
+  // A title és a router nem volt használva
 }
