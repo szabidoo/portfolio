@@ -1,13 +1,12 @@
-import { Component, input, numberAttribute } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgStyle } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { map, range } from 'rxjs';
-import { ParseSourceFile } from '@angular/compiler';
 
 @Component({
   selector: 'app-wordle',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Import CommonModule here
+  // Lecseréltem a CommonModule-t NgStyle-ra, mivel csak azt használja a template (az ngFor-t lecseréltem itt is).
+  imports: [FormsModule, NgStyle], // Import CommonModule here
   templateUrl: './wordle.component.html',
   styleUrls: ['./wordle.component.css'] // Corrected from 'styleUrl' to 'styleUrls'
 })
@@ -16,39 +15,33 @@ export class WordleComponent {
     attempts: Array(5).fill('') // Assuming 5 attempts per playground
   }));
 
- inputValues: string[] = [];
+  inputValues: string[] = [];
+  wordOfDay:string = 'asdel'; 
+  activeP: number = 0;
+  activeA: number = 0;
+  colors: string[][] = Array(5).fill(null).map(() => new Array(this.wordOfDay.length).fill(''));
+  color = '';
+  state: boolean = false;
 
- wordOfDay:string = 'asdel'; 
-
-
-
- activeP: number = 0;
- activeA: number = 0;
-
- colors: string[][] = Array(5).fill(null).map(() => new Array(this.wordOfDay.length).fill(''));
-
-color = '';
-state: boolean = false;
-
-getLetterColor(aIndex: number, pIndex: number): string {
-  return this.colors[aIndex][pIndex] || 'transparent'; // Default to 'transparent' if no color is set
-}
-
-compareWords(){
-  if(this.inputValues[this.activeA] === this.wordOfDay[this.activeA]){
-    this.colors[this.activeA][this.activeP] = '#0af59f';
+  getLetterColor(aIndex: number, pIndex: number): string {
+    return this.colors[aIndex][pIndex] || 'transparent'; // Default to 'transparent' if no color is set
   }
-  else if(this.wordOfDay.includes(this.inputValues[this.activeA]) && this.inputValues[this.activeA] !== this.wordOfDay[this.activeA]){
-    this.colors[this.activeA][this.activeP] = 'yellow';
-  }
-}
 
- isInputDisabled(pIndex: number, aIndex: number): boolean {
-  
-  if (pIndex == this.activeP && aIndex == this.activeA){
-    return false
-  }else return true
-}
+  compareWords(){
+    if(this.inputValues[this.activeA] === this.wordOfDay[this.activeA]){
+      this.colors[this.activeA][this.activeP] = '#0af59f';
+    }
+    else if(this.wordOfDay.includes(this.inputValues[this.activeA]) && this.inputValues[this.activeA] !== this.wordOfDay[this.activeA]){
+      this.colors[this.activeA][this.activeP] = 'yellow';
+    }
+  }
+
+  isInputDisabled(pIndex: number, aIndex: number): boolean {
+    
+    if (pIndex == this.activeP && aIndex == this.activeA){
+      return false
+    }else return true
+  }
  
 
   keyup(event: KeyboardEvent, playgroundIndex: number, attemptIndex: number) {
@@ -87,7 +80,7 @@ compareWords(){
           this.activeA = 0;
         }
 
-     }
+      }
       
     }
     

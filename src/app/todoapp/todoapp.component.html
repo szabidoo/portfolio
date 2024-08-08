@@ -4,9 +4,11 @@
         <button id="addButton" (click)="addTask()">Add</button>
     </form>
     <ul id="taskList">
-        <li *ngFor="let task of tasks; let i = index">
-            <span>{{task}}</span>
-            <button id="removeButton" (click)="removeTask(i)">X</button>
-        </li>
+        @for(task of tasks; track $index) {
+            <li>
+                <span>{{task}}</span>
+                <button id="removeButton" (click)="removeTask($index)">X</button>
+            </li>
+        }
     </ul>
 </div>

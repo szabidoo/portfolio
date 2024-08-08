@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgFor } from '@angular/common';
-
-
 
 @Component({
   selector: 'app-todoapp',
   standalone: true,
-  imports: [FormsModule, NgFor],
+  imports: [FormsModule],
   templateUrl: './todoapp.component.html',
   styleUrl: './todoapp.component.css'
 })
@@ -20,7 +17,6 @@ export class TodoappComponent {
       this.tasks.push(this.newtask.trim());
       this.newtask = '';
     }
-    console.log(this.tasks);
   }
 
   removeTask(index: number) {
